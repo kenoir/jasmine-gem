@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="<%= css_file %>" type="text/css" media="screen"/>
   <% end %>
 
-  <script type="text/javascript" src="../public/javascripts/vendor/jquery.min.js"></script>
-  <script type="text/javascript" src="../public/javascripts/vendor/jquery-ui.min.js"></script>
-  <script type="text/javascript" src="../public/javascripts/vendor/require.js"></script>
+  <script type="text/javascript" src="/public/javascripts/vendor/jquery.min.js"></script>
+  <script type="text/javascript" src="/public/javascripts/vendor/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="/public/javascripts/vendor/require.js"></script>
   <script type="text/javascript">
     require.config({
       baseUrl: '../public/javascripts',
@@ -50,7 +50,8 @@
       };
 
       function execJasmine() {
-        require(['PaintItRed'], function(paintItRed) {        
+        require(['jquery','jquery-ui'], function($) {
+          
           jasmineEnv.execute();
         });
       }
