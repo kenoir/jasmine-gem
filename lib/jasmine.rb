@@ -12,5 +12,3 @@ jasmine_files.each do |file|
 end
 
 require File.join('jasmine', "railtie") if Jasmine::Dependencies.rails3?
-
-

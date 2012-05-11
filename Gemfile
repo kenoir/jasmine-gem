@@ -1,4 +1,9 @@
 source "http://rubygems.org"
+
+gem 'rspec'
+gem 'rake'
+gem 'jasmine-core'
+
 gemspec
 
 unless ENV["TRAVIS"]
@@ -8,8 +13,8 @@ unless ENV["TRAVIS"]
     # # Replace with your ruby path if necessary
     # gem install linecache19-0.5.13.gem ruby-debug-base19-0.11.26.gem -- --with-ruby-include=$rvm_path/src/ruby-1.9.3-p125/
     # rm linecache19-0.5.13.gem ruby-debug-base19-0.11.26.gem
-    gem 'linecache19', '0.5.13'
-    gem 'ruby-debug-base19', '0.11.26'
+    # gem 'linecache19', '0.5.13'
+    # gem 'ruby-debug-base19', '0.11.26'
     gem 'ruby-debug19', :require => 'ruby-debug'
   end
 end
