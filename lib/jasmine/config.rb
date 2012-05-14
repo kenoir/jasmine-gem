@@ -3,6 +3,18 @@ module Jasmine
     require 'yaml'
     require 'erb'
 
+    def jasmin_execute_js
+      'jasmineEnv.execute();'
+    end
+
+    def jasmin_execute_js_prepend
+      ""
+    end 
+
+    def jasmin_execute_js_append
+      ""
+    end
+
     def browser
       ENV["JASMINE_BROWSER"] || 'firefox'
     end

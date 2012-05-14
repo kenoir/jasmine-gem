@@ -8,19 +8,6 @@
     <link rel="stylesheet" href="<%= css_file %>" type="text/css" media="screen"/>
   <% end %>
 
-  <script type="text/javascript" src="/public/javascripts/vendor/jquery.min.js"></script>
-  <script type="text/javascript" src="/public/javascripts/vendor/jquery-ui.min.js"></script>
-  <script type="text/javascript" src="/public/javascripts/vendor/require.js"></script>
-  <script type="text/javascript">
-    require.config({
-      baseUrl: '../public/javascripts',
-      paths: {
-        'jquery': 'vendor/jquery.min',
-        'jquery-ui': 'vendor/jquery-ui.min'
-      }
-    });
-  </script>
-
   <% jasmine_files.each do |jasmine_file| %>
   <script src="<%= jasmine_file %>" type="text/javascript"></script>
   <% end %>
@@ -50,11 +37,7 @@
       };
 
       function execJasmine() {
-        require(['jquery','jquery-ui'], function($) {
-          
-          jasmineEnv.execute();
-
-        });
+        <%= jasmine_execute_js %>
       }
 
     })();

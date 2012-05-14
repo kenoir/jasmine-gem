@@ -11,8 +11,10 @@ module Jasmine
   def self.app(config)
     jasmine_stylesheets = ::Jasmine::Core.css_files.map {|f| "/__JASMINE_ROOT__/#{f}"}
     config_shim = OpenStruct.new({:jasmine_files => ::Jasmine::Core.js_files.map {|f| "/__JASMINE_ROOT__/#{f}"},
+                                  :jasmine_execute_js => config.jasmin_execute_js_prepend + config.jasmin_execute_js + config.jasmin_execute_js_append,
                                   :js_files => config.js_files,
                                   :css_files => jasmine_stylesheets + (config.css_files || [])})
+
     page = Jasmine::Page.new(config_shim.instance_eval { binding })
     Rack::Builder.app do
       use Rack::Head
@@ -39,3 +41,4 @@ module Jasmine
     end
   end
 end
+
